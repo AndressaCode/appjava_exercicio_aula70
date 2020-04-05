@@ -12,19 +12,21 @@ package util;
  *
  * @author Andressa Silva
  */
-public class CurrencyConverter {
+public class CurrencyConverter{
     
-    public static double totalTax(double dolarQtd){
-        double r = dolarQtd * 6/100; // imposto
-        return r + dolarQtd; // imposto + o valor do dolar
+    public static double IOF = 0.06;
+    
+    public static double dolarToReal(double dolarQtd, double dolarPrice){
+        
+        // quantidade total de dolars * valor do dolar * o imposto 
+        // sobre a quantidade total
+        
+        double total = dolarQtd * dolarPrice * (1.0 + IOF);
+        return total;
     }
-    
-    public static double totalValue(double dolarPrice, double s){
-        return s * dolarPrice; // preço do dolar * quantidade total de dollars que serão comprados
-    }
-    //totalValue * dolarPrice;
-    
-} // dolarQtd += 
+}
+
+
 // dolares que serão comprados + o valor do imposto
 // entao o imposto 6/100 * qtdDolar
 // posso chamar esses métodos na classe Program por serem estáticos, pois

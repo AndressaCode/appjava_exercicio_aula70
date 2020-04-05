@@ -24,21 +24,17 @@ public class Program{
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
         
-        System.out.print("Please, enter the dollar price: $");
+        System.out.print("Please, enter the dollar price: $ ");
         double dolarPrice = sc.nextDouble();
         
-        System.out.print("How many dollars will be bougth? $");
+        System.out.print("How many dollars will be bougth? $ ");
         double dolarQtd = sc.nextDouble();
         
-        double c = CurrencyConverter.totalTax(dolarQtd);
-        double d = CurrencyConverter.totalValue(dolarPrice, c);
+        double result = CurrencyConverter.dolarToReal(dolarQtd, dolarPrice);
         
-        System.out.print("You will pay in reais: " + d);
+        System.out.printf("You will pay in reais: R$ %.2f ", result);
         
         sc.close();
-    
-        
-        
     }
 
 }
